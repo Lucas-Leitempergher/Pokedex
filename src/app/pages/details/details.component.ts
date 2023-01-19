@@ -19,7 +19,7 @@ export class DetailsComponent implements OnInit {
 
 
   public pokemon: any;
-  public isLoanding : boolean = false;
+  public isLoading : boolean = false;
   public apiError: boolean = false;
 
   constructor(
@@ -41,7 +41,7 @@ export class DetailsComponent implements OnInit {
     return forkJoin([pokemon, name]).subscribe(
       res => {
         this.pokemon = res;
-        this.isLoanding = true;
+        this.isLoading = true;
       },
       error => {
         this.apiError = true;
