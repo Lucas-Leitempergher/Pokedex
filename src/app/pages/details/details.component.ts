@@ -12,8 +12,11 @@ import { PokeApiService } from 'src/app/service/poke-api.service';
 })
 export class DetailsComponent implements OnInit {
 
-  private urlPokemon: string = 'https://pokeapi.co/api/v2/pokemon';
-  private urlName: string = 'https://pokeapi.co/api/v2/pokemon-species';
+  //private urlPokemon: string = 'https://pokeapi.co/api/v2/pokemon';
+ // private urlName: string = 'https://pokeapi.co/api/v2/pokemon-species';
+  private urlPokemon: string = 'http://brjgsd357198:5500/api/v2/pokemon';
+  private urlName: string = 'http://brjgsd357198:5500/api/v2/pokemon-species';
+
 
   public pokemon: any;
   public isLoanding : boolean = false;
@@ -25,10 +28,10 @@ export class DetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getpokemon;
+    this.getPokemon;
   }
 
-  public getpokemon(){
+  public getPokemon(){
 
     const id = this.activatedRoute.snapshot.params['id'];
     const pokemon = this.pokeApiService.apiGetPokemons(`${this.urlPokemon}/${id}`);
